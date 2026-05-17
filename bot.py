@@ -108,56 +108,63 @@ class feishuBot:
         return cards
 
     def send(self, cards: list):
-        """发送卡片消息"""
+        """发送卡片消息（每卡最多50条，超出分批）"""
         for card in cards:
-            print(f'Card: {len(json.dumps(card))} chars')
+            elements = card.get("elements", [])
+            # 移除 hr 和 note，只保留文章列表
+            articles = [e for e in elements if e.get("tag") == "div"]
+            note = [e for e in elements if e.get("tag") == "note"]
+            footer = note or [{"tag": "note", "elements": [{"tag": "plain_text", "content": "Picker RSS Bot"}]}]
 
-            data = {
-                "msg_type": "interactive",
-                "card": card
-            }
-            headers = {'Content-Type': 'application/json'}
-            url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
-            r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
-
-            if r.status_code == 200:
-                Color.print_success('[+] feishuBot 卡片发送成功')
-            else:
-                Color.print_failed('[-] feishuBot 发送失败')
-                print(r.text)
+            # 分批：每批最多 45 篇文章（飞书卡片单卡元素上限约50）
+            batch_size = 45
+            for i in range(0, len(articles), batch_size):
+                batch = articles[i:i+batch_size]
+                batch_card = {
+                    "config": {"wide_screen_mode": True},
+                    "header": card.get("header"),
+                    "elements": [{"tag": "hr"}] + batch + [{"tag": "hr"}] + footer
+                }
+                data = {"msg_type": "interactive", "card": batch_card}
+                headers = {'Content-Type': 'application/json'}
+                url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
+                try:
+                    r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy, timeout=30)
+                    print(f'[feishu] batch {i//batch_size+1}: {r.status_code}')
+                    if r.status_code == 200:
+                        Color.print_success(f'[+] feishuBot 卡片发送成功 (batch {i//batch_size+1})')
+                    else:
+                        Color.print_failed(f'[-] feishuBot 发送失败 (batch {i//batch_size+1})')
+                        print(r.text[:200])
+                except Exception as e:
+                    Color.print_failed(f'[-] feishuBot 发送异常: {e}')
 
     def send_raw(self, title, text):
-        """发送摘要卡片（信息流汇总时使用）"""
-        card = {
-            "config": {"wide_screen_mode": True},
-            "header": {
-                "title": {"tag": "plain_text", "content": title[:100]},
-                "template": feishuBot.COLOR_GREEN
-            },
-            "elements": [
-                {
-                    "tag": "markdown",
-                    "content": text[:1500]
+        """发送摘要卡片"""
+        try:
+            card = {
+                "config": {"wide_screen_mode": True},
+                "header": {
+                    "title": {"tag": "plain_text", "content": str(title)[:100]},
+                    "template": feishuBot.COLOR_GREEN
                 },
-                {"tag": "hr"},
-                {
-                    "tag": "note",
-                    "elements": [{"tag": "plain_text", "content": "Picker RSS Bot"}]
-                }
-            ]
-        }
-        data = {
-            "msg_type": "interactive",
-            "card": card
-        }
-        headers = {'Content-Type': 'application/json'}
-        url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
-        r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
-        if r.status_code == 200:
-            Color.print_success('[+] feishuBot 发送成功')
-        else:
-            Color.print_failed('[-] feishuBot 发送失败')
-            print(r.text)
+                "elements": [
+                    {"tag": "markdown", "content": str(text)[:1500]},
+                    {"tag": "hr"},
+                    {"tag": "note", "elements": [{"tag": "plain_text", "content": "Picker RSS Bot"}]}
+                ]
+            }
+            data = {"msg_type": "interactive", "card": card}
+            headers = {'Content-Type': 'application/json'}
+            url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
+            r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy, timeout=30)
+            if r.status_code == 200:
+                Color.print_success('[+] feishuBot 发送成功')
+            else:
+                Color.print_failed('[-] feishuBot 发送失败')
+                print(r.text[:200])
+        except Exception as e:
+            Color.print_failed(f'[-] feishuBot send_raw 异常: {e}')
 
 
 class wecomBot:
