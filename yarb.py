@@ -3,7 +3,6 @@
 
 import json
 import argparse
-import sys
 import datetime
 from urllib import parse
 import listparser
@@ -276,7 +275,9 @@ def job(args, conf):
                     results[feed] = result
         Color.print_focus(f'[+] {len(results)} feeds, {count} articles')
 
-        temp_path = root_path.joinpath(f'archive//tmp//{today}.json')
+        temp_dir = root_path.joinpath('archive/tmp')
+        temp_dir.mkdir(parents=True, exist_ok=True)
+        temp_path = temp_dir.joinpath(f'{today}.json')
         with open(temp_path, 'w+', encoding="utf-8") as f:
             f.write(json.dumps(results, indent=4, ensure_ascii=False))
             Color.print_focus(f'[+] temp data: {temp_path}')
@@ -285,22 +286,16 @@ def job(args, conf):
         update_today(results)
 
     for bot in bots:
-        print(f'[debug] processing bot: {type(bot).__name__}', flush=True)
         try:
             parsed = bot.parse_results(results)
-            print(f'[debug] parsed {len(parsed)} items from results', flush=True)
             bot.send(parsed)
-            print(f'[debug] bot.send completed', flush=True)
         except Exception as e:
             Color.print_failed(f'[-] bot.send error: {e}')
-            sys.stdout.flush()
         try:
             summary = f"今日({today})信息流推送完毕, 从{len(feeds)} feeds抓取到{yesterday}日共新增了{count}文章, 可在[issues]({conf['repo']}/issues)中查看"
             bot.send_raw(f"{today} 信息流摘要", summary)
-            print(f'[debug] bot.send_raw completed', flush=True)
         except Exception as e:
             Color.print_failed(f'[-] bot.send_raw error: {e}')
-            sys.stdout.flush()
 
 
 def argument():
@@ -336,10 +331,4 @@ if __name__ == '__main__':
     elif args.push_comment:
         push_comment(args.push_comment)
     else:
-        print('[debug] running job()', flush=True)
-        try:
-            job(args, conf)
-        except Exception as e:
-            Color.print_failed(f'[fatal] job() crashed: {e}')
-            sys.stdout.flush()
-            raise
+        job(args, conf)
