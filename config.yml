@@ -49,7 +49,7 @@ bot:
   feishu:
     enabled: true
     secrets: FEISHU_KEY
-    key: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    key: FEISHU_KEY
   wecom:
     enabled: false
     secrets: WECOM_KEY
