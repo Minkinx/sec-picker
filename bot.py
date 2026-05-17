@@ -39,11 +39,10 @@ class feishuBot:
         self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
 
     @staticmethod
-    def parse_results(results: list) -> list:
+    def parse_results(results: dict) -> list:
         """将结果解析为卡片消息列表"""
         cards = []
-        for result in results:
-            (feed, value), = result.items()
+        for feed, value in results.items():
 
             # 文章的竖排模块
             articles = []
