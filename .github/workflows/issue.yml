@@ -4,6 +4,10 @@ on:
   issues:
     types: [opened]
 
+permissions:
+  issues: write
+  contents: write
+
 jobs:
   add-labels:
     runs-on: ubuntu-latest
@@ -16,7 +20,7 @@ jobs:
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'update-issue'
-          token: ${{ secrets.MY_GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           labels: pick
           title: "[${{ steps.date.outputs.date }}] ${{ github.event.issue.title }}"
@@ -25,9 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     if: join(github.event.issue.labels) == ''
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
       - name: Install dependencies
@@ -35,7 +39,7 @@ jobs:
       - name: Update Body
         run: python3 yarb.py --push-issue ${{ github.event.issue.number }}
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DINGTALK_KEY: ${{ secrets.DINGTALK_KEY }}
           DINGTALK_SECRET: ${{ secrets.DINGTALK_SECRET }}
           PICKER_DINGTALK_KEY: ${{ secrets.PICKER_DINGTALK_KEY }}
