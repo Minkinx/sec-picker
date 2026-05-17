@@ -1,6 +1,7 @@
 import base64
 import hashlib
 import hmac
+import sys
 import time
 import json
 from urllib import parse
@@ -130,6 +131,7 @@ class feishuBot:
                 try:
                     r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy, timeout=30)
                     print(f'[feishu] batch {i//batch_size+1}: {r.status_code}')
+                    sys.stdout.flush()
                     if r.status_code == 200:
                         Color.print_success(f'[+] feishuBot 卡片发送成功 (batch {i//batch_size+1})')
                     else:
@@ -137,6 +139,7 @@ class feishuBot:
                         print(r.text[:200])
                 except Exception as e:
                     Color.print_failed(f'[-] feishuBot 发送异常: {e}')
+                    sys.stdout.flush()
 
     def send_raw(self, title, text):
         """发送摘要卡片"""
@@ -162,8 +165,10 @@ class feishuBot:
             else:
                 Color.print_failed('[-] feishuBot 发送失败')
                 print(r.text[:200])
+                sys.stdout.flush()
         except Exception as e:
             Color.print_failed(f'[-] feishuBot send_raw 异常: {e}')
+            sys.stdout.flush()
 
 
 class wecomBot:

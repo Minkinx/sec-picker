@@ -1,4 +1,5 @@
 import os
+import sys
 import pprint
 import subprocess
 
@@ -8,15 +9,15 @@ from colorama import Fore
 class Color:
     @staticmethod
     def print_focus(data: str):
-        print(Fore.YELLOW+data+Fore.RESET)
+        print(Fore.YELLOW+data+Fore.RESET, flush=True)
 
     @staticmethod
     def print_success(data: str):
-        print(Fore.LIGHTGREEN_EX+data+Fore.RESET)
+        print(Fore.LIGHTGREEN_EX+data+Fore.RESET, flush=True)
 
     @staticmethod
     def print_failed(data: str):
-        print(Fore.LIGHTRED_EX+data+Fore.RESET)
+        print(Fore.LIGHTRED_EX+data+Fore.RESET, flush=True)
 
     @staticmethod
     def print(data):
