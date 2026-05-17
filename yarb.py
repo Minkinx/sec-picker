@@ -284,8 +284,16 @@ def job(args, conf):
         update_today(results)
 
     for bot in bots:
-        bot.send(bot.parse_results(results))
-        bot.send_raw(f"{today} 信息流摘要", f"今日({today})信息流推送完毕, 从{len(feeds)} feeds抓取到{yesterday}日共新增了{count}文章, 可在[issues]({conf['repo']}/issues)中查看")
+        try:
+            parsed = bot.parse_results(results)
+            bot.send(parsed)
+        except Exception as e:
+            Color.print_failed(f'[-] bot.send error: {e}')
+        try:
+            summary = f"今日({today})信息流推送完毕, 从{len(feeds)} feeds抓取到{yesterday}日共新增了{count}文章, 可在[issues]({conf['repo']}/issues)中查看"
+            bot.send_raw(f"{today} 信息流摘要", summary)
+        except Exception as e:
+            Color.print_failed(f'[-] bot.send_raw error: {e}')
 
 
 def argument():
