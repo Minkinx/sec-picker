@@ -41,38 +41,61 @@ class feishuBot:
 
     @staticmethod
     def parse_results(results: dict) -> list:
-        """将结果解析为卡片消息列表"""
-        cards = []
-        for feed, value in results.items():
+        """将所有 feed 文章合并为 3-4 张卡片"""
+        # 收集所有文章 (feed, title, link)
+        all_articles = []
+        total_feeds = len(results)
+        for feed, articles in results.items():
+            for title, link in articles.items():
+                all_articles.append((feed, title, link))
 
-            # 文章的竖排模块
-            articles = []
-            for title, link in value.items():
-                articles.append({
+        if not all_articles:
+            return []
+
+        total = len(all_articles)
+        batch_size = 45  # 飞书卡片元素上限约50，留余量
+        cards = []
+
+        for batch_idx in range(0, total, batch_size):
+            batch = all_articles[batch_idx:batch_idx + batch_size]
+            card_num = batch_idx // batch_size + 1
+            total_cards = (total + batch_size - 1) // batch_size
+
+            items = []
+            for feed, title, link in batch:
+                items.append({
                     "tag": "div",
-                    "text": {"tag": "lark_md", "content": f"🔗 [{title}]({link})"}
+                    "text": {
+                        "tag": "lark_md",
+                        "content": f"📌 **{feed}**\n🔗 [{title}]({link})"
+                    }
                 })
+
+            title = f"📡 信息流推送 ({card_num}/{total_cards})"
+            if total_cards == 1:
+                title = f"📡 信息流推送（{total_feeds} 个源，共 {total} 篇）"
 
             card = {
                 "config": {"wide_screen_mode": True},
                 "header": {
-                    "title": {"tag": "plain_text", "content": f"📡 {feed}"},
+                    "title": {"tag": "plain_text", "content": title},
                     "template": feishuBot.COLOR_BLUE
                 },
                 "elements": [
                     {"tag": "hr"},
-                    *articles,
+                    *items,
                     {"tag": "hr"},
                     {
                         "tag": "note",
                         "elements": [{
                             "tag": "plain_text",
-                            "content": f"共 {len(value)} 篇新文章 | Picker RSS Bot"
+                            "content": f"来自 {total_feeds} 个订阅源 | 第 {card_num}/{total_cards} 页"
                         }]
                     }
                 ]
             }
             cards.append(card)
+
         return cards
 
     @staticmethod
