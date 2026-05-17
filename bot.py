@@ -22,43 +22,142 @@ today = datetime.now().strftime("%Y-%m-%d")
 
 
 class feishuBot:
-    """飞书群机器人
+    """飞书群机器人 - 支持卡片消息
     https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN
     """
+
+    # 颜色常量
+    COLOR_BLUE = "blue"
+    COLOR_GREEN = "green"
+    COLOR_RED = "red"
+    COLOR_PURPLE = "purple"
+    COLOR_GREY = "grey"
+    COLOR_INDIGO = "indigo"
+
     def __init__(self, key, proxy_url='') -> None:
         self.key = key
         self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
 
     @staticmethod
-    def parse_results(results: list):
-        text_list = []
+    def parse_results(results: list) -> list:
+        """将结果解析为卡片消息列表"""
+        cards = []
         for result in results:
             (feed, value), = result.items()
-            text = f'[ {feed} ]\n\n'
+
+            # 文章的竖排模块
+            articles = []
             for title, link in value.items():
-                text += f'{title}\n{link}\n\n'
-            text_list.append(text.strip())
-        return text_list
+                articles.append({
+                    "tag": "div",
+                    "text": {"tag": "lark_md", "content": f"🔗 [{title}]({link})"}
+                })
 
-    def send(self, text_list: list):
-        for text in text_list:
-            print(f'{len(text)} {text[:50]}...{text[-50:]}')
+            card = {
+                "config": {"wide_screen_mode": True},
+                "header": {
+                    "title": {"tag": "plain_text", "content": f"📡 {feed}"},
+                    "template": feishuBot.COLOR_BLUE
+                },
+                "elements": [
+                    {"tag": "hr"},
+                    *articles,
+                    {"tag": "hr"},
+                    {
+                        "tag": "note",
+                        "elements": [{
+                            "tag": "plain_text",
+                            "content": f"共 {len(value)} 篇新文章 | Picker RSS Bot"
+                        }]
+                    }
+                ]
+            }
+            cards.append(card)
+        return cards
 
-            data = {"msg_type": "text", "content": {"text": text}}
+    @staticmethod
+    def parse_pick(results: dict) -> list:
+        """精选文章解析为卡片"""
+        cards = []
+        today = datetime.now().strftime("%Y-%m-%d")
+        for feed, articles in results.items():
+            items = []
+            for title, link, issue_url in articles:
+                items.append({
+                    "tag": "div",
+                    "text": {"tag": "lark_md", "content": f"⭐ [{title}]({link}) — [讨论]({issue_url})"}
+                })
+
+            card = {
+                "config": {"wide_screen_mode": True},
+                "header": {
+                    "title": {"tag": "plain_text", "content": f"🌟 {today} 精选 - {feed}"},
+                    "template": feishuBot.COLOR_PURPLE
+                },
+                "elements": [
+                    {"tag": "hr"},
+                    *items,
+                    {"tag": "hr"},
+                    {
+                        "tag": "note",
+                        "elements": [{"tag": "plain_text", "content": f"共 {len(articles)} 篇精选 | Picker RSS Bot"}]
+                    }
+                ]
+            }
+            cards.append(card)
+        return cards
+
+    def send(self, cards: list):
+        """发送卡片消息"""
+        for card in cards:
+            print(f'Card: {len(json.dumps(card))} chars')
+
+            data = {
+                "msg_type": "interactive",
+                "card": card
+            }
             headers = {'Content-Type': 'application/json'}
             url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
             r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
             if r.status_code == 200:
-                Color.print_success('[+] feishuBot 发送成功')
+                Color.print_success('[+] feishuBot 卡片发送成功')
             else:
                 Color.print_failed('[-] feishuBot 发送失败')
                 print(r.text)
 
-    def send_markdown(self, text):
-        # TODO 富文本
-        data = {"msg_type": "text", "content": {"text": text}}
-        self.send(data)
+    def send_raw(self, title, text):
+        """发送摘要卡片（信息流汇总时使用）"""
+        card = {
+            "config": {"wide_screen_mode": True},
+            "header": {
+                "title": {"tag": "plain_text", "content": title[:100]},
+                "template": feishuBot.COLOR_GREEN
+            },
+            "elements": [
+                {
+                    "tag": "markdown",
+                    "content": text[:1500]
+                },
+                {"tag": "hr"},
+                {
+                    "tag": "note",
+                    "elements": [{"tag": "plain_text", "content": "Picker RSS Bot"}]
+                }
+            ]
+        }
+        data = {
+            "msg_type": "interactive",
+            "card": card
+        }
+        headers = {'Content-Type': 'application/json'}
+        url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
+        r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
+        if r.status_code == 200:
+            Color.print_success('[+] feishuBot 发送成功')
+        else:
+            Color.print_failed('[-] feishuBot 发送失败')
+            print(r.text)
 
 
 class wecomBot:
