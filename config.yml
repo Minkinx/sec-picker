@@ -1,4 +1,4 @@
-repo: https://github.com/zer0yu/picker
+repo: https://github.com/Minkinx/sec-picker
 proxy:
   url: 'http://127.0.0.1:7890'
   rss: false
@@ -47,7 +47,7 @@ rss:
     filename: chinese-independent-blogs.opml
 bot:
   feishu:
-    enabled: false
+    enabled: true
     secrets: FEISHU_KEY
     key: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
   wecom:
