@@ -1,0 +1,185 @@
+{
+    "SecWiki News": {
+        "SecWiki News 2026-09-30 Review": "http://www.sec-wiki.com/?2026-09-30"
+    },
+    "Doonsec's feed": {
+        "控制台管道注入技术绕过EDR": "https://mp.weixin.qq.com/s/QsZrl4xxkaZDoGyBDZxTfA",
+        "一个80年代的反毒项目，如何把全美车牌数据汇成联邦监控库": "https://mp.weixin.qq.com/s/_vVIIQjXno24e2-50Inp5w",
+        "工具分享 | 密探2.0体验：把资产收集、测绘和扫描集中到一个工具里": "https://mp.weixin.qq.com/s/DW1LmnCFS6ECJSI1AYqiiQ",
+        "网安利器 | Burp Suite + MCP：让AI参与Web安全测试": "https://mp.weixin.qq.com/s/ciP5hHiFfSl5aOmOSY1b2Q",
+        "10月17日专题会议：青年学者学术会议": "https://mp.weixin.qq.com/s/YUyEpxsxRQM3nwicVEGW3Q",
+        "突发！京东晋升名单国庆前公示了，有人涨了700块": "https://mp.weixin.qq.com/s/UdNDPlWEcalKwRY2H2sMpg",
+        "懵了！给员工的中秋福利竟然是一个钓鱼邮件演练。网友：这安全部门为了证明自己的存在感，也是够拼的。": "https://mp.weixin.qq.com/s/x9ttoRjA_xkleqLDRnKhmA",
+        "Next.js CVE-2026-94545 分析：next/og 里没转义的引号，和一个没讲完的 RCE": "https://mp.weixin.qq.com/s/DRfz2VWHun00esyAVPseRw",
+        "国庆专享，节后删": "https://mp.weixin.qq.com/s/8Xp9fCvtLngvI0rkBqJFDQ",
+        "AI安全的形式化验证与可证明安全": "https://mp.weixin.qq.com/s/4NoSpRQdepjfvOugy7ClSw",
+        "AI Agent 进入网络安全之后，渗透测试开始有点不一样了": "https://mp.weixin.qq.com/s/lIcZiUIsdVGFKo2H-KcdWg",
+        "【AI安全】后门等到“有理由”才动手：OPBackdoor 怎样藏在合理回答里": "https://mp.weixin.qq.com/s/AiSStH6iYoMyl6HKWflq2g",
+        "对1000份网安简历的分析": "https://mp.weixin.qq.com/s/2FOFmYaook3H4LCAyjOBGg",
+        "网络安全应急响应专家智能体更新：6 大能力域": "https://mp.weixin.qq.com/s/e8pKErg9VdJmwKzQfpkPUA",
+        "G.O.S.S.I.P 阅读推荐 2026-09-30 坏宝宝TV？": "https://mp.weixin.qq.com/s/3BlX41yc5gjHaVfWzIa5OQ",
+        "【成果分享】一张开发者证书，如何绕过 App Store？我们揭开了 iPhone“魔改版”App 背后的灰色产业": "https://mp.weixin.qq.com/s/gi33HB5IEyQp87KFE14zsQ",
+        "MazeSec-lian": "https://mp.weixin.qq.com/s/Q9DnQIVuYgqXyo8I7QTGdw",
+        "江西神舟2026年国庆节放假安排": "https://mp.weixin.qq.com/s/SCxTkz79sASetrjmxYkoqw",
+        "从一个 Schema 名到 RCE：n8n 原型污染漏洞（CVE-2026-33696）分析": "https://mp.weixin.qq.com/s/1-7PeY7hGDxRZ_FodNMiTg",
+        "花了三小时进山打野，收获颇丰": "https://mp.weixin.qq.com/s/L1BO-yb0Me6e-dbWPzgvLA",
+        "(9.9分) CVE-2026-102911：pi-llm-wiki MCP工具命令注入RCE": "https://mp.weixin.qq.com/s/7FJ54VCLRF7rQib5k2o3RA",
+        "AgentTeams Dashboard v1.2.5：68 个 commit，把「自己更新自己」做进去了": "https://mp.weixin.qq.com/s/oGpGUp0hBF6cC50108IpwQ",
+        "网络安全警示｜私自VPN翻墙必被查！多校真实处分案例警醒全体同学": "https://mp.weixin.qq.com/s/7ZQyXfKXACqihFt_8YV31g",
+        "SQL 注入到底是怎么操作的？": "https://mp.weixin.qq.com/s/OSQrob5TZbVTt9U6YJ7ohA",
+        "智能取证新范式！取证智能体制作与实战应用研修班报名启动": "https://mp.weixin.qq.com/s/RKB4t8tYJIkCOoLSmVGHQg",
+        "国庆服务不“打烊”，美亚柏科技术支持7*24小时在线！": "https://mp.weixin.qq.com/s/06wm8FNVllKzLIuDhLYOsQ",
+        "Hx0 鹰眼 0930 更新：把 Agent 磨稳，Pro 永久会员国庆 79 元": "https://mp.weixin.qq.com/s/xFo3Ln5mAaDCTPgFv_oriw",
+        "仅125元，软硬件全开源，国庆假期 DIY一台桌面激光雕刻机，支持树叶、皮革、木头、塑料、卡纸，给你的拓竹 3D 打印手办加盖专属 Logo": "https://mp.weixin.qq.com/s/B_EZEvbNngB-ysklI4E7EQ",
+        "秦安：国庆前夕，两大国发出核警告！日本妄谈拥核，中俄亮出底线，绝非危言耸听": "https://mp.weixin.qq.com/s/AGBMqKUv6boYTS13wZ6Hew",
+        "秦安：惊魂险情！以色列恶行，正在遭遇超级风险，飞机副驾驶试图让客机坠落": "https://mp.weixin.qq.com/s/6PXwxxrHTViO2IZyR54kKg",
+        "从一条审批API请求，挖掘严重漏洞": "https://mp.weixin.qq.com/s/6bzWN9mP6wD5c0rwpGqA5A",
+        "2026年第一场前沿技术闭门会圆满举办": "https://mp.weixin.qq.com/s/dAPJ-Y0aop1xiAOpTfPGcg",
+        "【安全圈】全新幽灵BTR漏洞曝光：绕过主流防御窃取Linux内核高权哈希": "https://mp.weixin.qq.com/s/BJ6xcb874rx0okXA8LODEQ",
+        "【安全圈】OpenSSL修复DTLS高危漏洞：重传逻辑缺陷致未加密堆内存外泄": "https://mp.weixin.qq.com/s/eqe3d6YPvHO8T7Orx3Z_dg",
+        "【安全圈】Citrix NetScaler高危双零日遭在野利用：Root权限与隧道木马曝光": "https://mp.weixin.qq.com/s/SR7zfvGvEzdsVNQpalz9Wg",
+        "九月安全大事件盘点：AI 智能体「抱团越界」，千亿防线遭遇多线告急": "https://mp.weixin.qq.com/s/yItNYd_01BVdI9B2fc91BA",
+        "卡扣": "https://mp.weixin.qq.com/s/02njtfMbX1qdadIFiwoggA",
+        "【高危漏洞预警】Next.js ImageResponseRCE漏洞CVE-2026-94545": "https://mp.weixin.qq.com/s/dbCopeejL_EwV4UQQCtFoA",
+        "注意！国庆长假，这些计算机病毒正在流行！": "https://mp.weixin.qq.com/s/Gv0nvxg2nuaDw9p4L6_3Ig",
+        "中央网信办部署开展“清朗·整治短视频虚假人设乱象”专项行动": "https://mp.weixin.qq.com/s/PR_r9k2yICDSgJWuCqOPpw",
+        "专题·原创 | 人工智能时代电信运营商漏洞安全治理体系重构与实践": "https://mp.weixin.qq.com/s/srpFayIqThg95Pb6MJKzCg",
+        "关注 | 中央网信办部署开展“清朗·整治短视频虚假人设乱象”专项行动": "https://mp.weixin.qq.com/s/CTXrXJGFYLSi_gun0XGZ0g",
+        "专家解读 | 刘颖：分类施策精准保护xa0筑牢网络护苗屏障": "https://mp.weixin.qq.com/s/wBA-zlO4MjX55khzJgR6OA",
+        "CNCERT | 关于新型僵尸网络FlyLegit大范围传播的风险提示": "https://mp.weixin.qq.com/s/JdJXI_ZUTnbuG3L2FSDqZQ",
+        "观点 | 防范前沿人工智能技术失控风险": "https://mp.weixin.qq.com/s/YR1xfS0ZPtApLFo4dsZW5Q",
+        "评论 | 划清侵权边界优化营商网络环境": "https://mp.weixin.qq.com/s/3yw4LvnirIlUWWcs9aauBg",
+        "当 AI 学会\\\"翻墙\\\"：从 OpenAI 接连暂停训练，聊聊 AI 安全到底在防什么": "https://mp.weixin.qq.com/s/214gw9ZdgilihmOwA0UTGQ",
+        "从第一道 Flag，开启你的网安之旅｜中国民航大学 CTF 新生赛来啦！": "https://mp.weixin.qq.com/s/rRhKvsHfgjXOp_etCtv1qA",
+        "安全弘毅大讲堂|2026年国家网络安全宣传周专题讲座顺利开展": "https://mp.weixin.qq.com/s/9tJLUYviP088nVZKHdDdzw",
+        "9月网安执法与攻防大事记：近5000万的罚单，监管信号已非常明确": "https://mp.weixin.qq.com/s/OhJ3n00kZpcTPR6GP61npw",
+        "个人信息保护\\\"分层监管\\\"成型：大型企业戴上紧箍，小微企业松了绑": "https://mp.weixin.qq.com/s/OGy-CPhgMTIDq69mMb73Tg",
+        "七十七载山河庆华诞 四叶草安全以AI之盾 守护数字中国 祝祖国繁荣昌盛": "https://mp.weixin.qq.com/s/ZoDIJ3TF4RQ8G5Uv_vUDyw",
+        "捷普国庆节放假保障通知请查收！": "https://mp.weixin.qq.com/s/kt1KjraVN741GfEapao7gA",
+        "【漏洞情报】2026年9月车联网漏洞态势综述": "https://mp.weixin.qq.com/s/dVPfaeLA9zvAtwbb6b9now"
+    },
+    "HackerNoon": {
+        "My App Was Rejected By the App Store Six Times: It's Finally Live": "https://hackernoon.com/my-app-was-rejected-by-the-app-store-six-times-its-finally-live?source=rss",
+        "Coping is the Problem": "https://hackernoon.com/coping-is-the-problem?source=rss",
+        "Building Reliable Systems at Scale: Sai Joshitha Kathari on SRE, Kubernetes, and Women in Tech": "https://hackernoon.com/building-reliable-systems-at-scale-sai-joshitha-kathari-on-sre-kubernetes-and-women-in-tech?source=rss",
+        "Meet the Writer: Hacker Noon's Contributor Vladimir Sinitsyn, SEO Practitioner and Researcher": "https://hackernoon.com/meet-the-writer-hacker-noons-contributor-vladimir-sinitsyn-seo-practitioner-and-researcher?source=rss",
+        "A $299 Million Sports Week: The Other Side": "https://hackernoon.com/a-$299-million-sports-week-the-other-side?source=rss",
+        "Meet Jeleel Muibi: Building Infrastructure That Can Explain Its Failures": "https://hackernoon.com/meet-jeleel-muibi-building-infrastructure-that-can-explain-its-failures?source=rss",
+        "Strategy Is Boring": "https://hackernoon.com/strategy-is-boring?source=rss",
+        "Traditional UX: Is It Coming to an End?": "https://hackernoon.com/traditional-ux-is-it-coming-to-an-end?source=rss",
+        "101 Days of Building in Public, Measured in Code, Users, and Mistakes": "https://hackernoon.com/101-days-of-building-in-public-measured-in-code-users-and-mistakes?source=rss",
+        "Why Agent Observability Cannot Replace Evaluation": "https://hackernoon.com/your-agent-has-observability-it-doesnt-have-evals?source=rss",
+        "Every Investment Has an Emotional Price": "https://hackernoon.com/every-investment-has-an-emotional-price?source=rss",
+        "Did Elon Musk Buy Dot.com Just to Troll OpenAI’s New AI Agent Dots?": "https://hackernoon.com/did-elon-musk-buy-dotcom-just-to-troll-openais-new-ai-agent-dots?source=rss",
+        "Ascerta Raises $18M Led by Dell Technologies Capital to Prove Which AI Spend Pays Off": "https://hackernoon.com/ascerta-raises-$18m-led-by-dell-technologies-capital-to-prove-which-ai-spend-pays-off?source=rss",
+        "From Theory to Practice: Three Small Tools for Big Security Problems": "https://hackernoon.com/from-theory-to-practice-three-small-tools-for-big-security-problems?source=rss",
+        "Community Marketing Is Getting Harder. Useful Content Is the Way In.": "https://hackernoon.com/community-marketing-is-getting-harder-useful-content-is-the-way-in?source=rss",
+        "10 Niche Podcast Awards Organized by Industry and Genre": "https://hackernoon.com/10-niche-podcast-awards-organized-by-industry-and-genre?source=rss",
+        "MEXC Adds Another 1,000 BTC to Guardian Fund, Strengthening User Protection": "https://hackernoon.com/mexc-adds-another-1000-btc-to-guardian-fund-strengthening-user-protection?source=rss",
+        "A Quantum-Resistant Signature Doesn’t Make Your Blockchain Quantum-Safe": "https://hackernoon.com/a-quantum-resistant-signature-doesnt-make-your-blockchain-quantum-safe?source=rss",
+        "Puffer and Anchorage Digital Partner to Bring Institutional Settlement Infrastructure to Puffer UniF": "https://hackernoon.com/puffer-and-anchorage-digital-partner-to-bring-institutional-settlement-infrastructure-to-puffer-unif?source=rss",
+        "Build vs Buy Is Being Distorted by AI: Here's How": "https://hackernoon.com/build-vs-buy-is-being-distorted-by-ai-heres-how?source=rss"
+    },
+    "Wallarm": {
+        "AI Governance on AWS: The Runtime Control Loop: AI Governance on AWS: Four Functions, One Loop, and a Deadline That Already Passed": "https://lab.wallarm.com/runtime-ai-governance-aws-control-loop/"
+    },
+    "darkreading": {
+        "Malicious Custom GPTs Turn ChatGPT Into RAT Delivery Lure": "https://www.darkreading.com/cyberattacks-data-breaches/malicious-custom-gpts-chatgpt-rat-delivery-lure",
+        "Trump, Tech Giants Strike Voluntary AI Safety Accord": "https://www.darkreading.com/cyber-risk/trump-tech-giants-strike-voluntary-ai-safety-accord",
+        "As AI Reshapes the SOC Career Ladder, Satisfaction Rises for 91%, but Entry Gets Harder for Nearly Half": "https://www.darkreading.com/cybersecurity-careers/ai-reshapes-soc-career-ladder",
+        "Russia's Star Blizzard Ditches ClickFix to Widen Phishing Net": "https://www.darkreading.com/threat-intelligence/russia-star-blizzard-apt-ditches-clickfix-widen-phishing-net",
+        "South Africa Seeks Help After Cyberattack Targets Air Traffic Control": "https://www.darkreading.com/cyberattacks-data-breaches/south-africa-help-cyberattack-air-traffic-control"
+    },
+    "Microsoft Security Blog": {
+        "​​Secure what’s next: Your guide to Microsoft Security at Microsoft Ignite 2026": "https://www.microsoft.com/en-us/security/blog/2026/09/30/secure-whats-next-your-guide-to-microsoft-security-at-microsoft-ignite-2026/",
+        "Unauthenticated command injection on internet-facing mail servers: tracking CVE-2026-73570": "https://www.microsoft.com/en-us/security/blog/2026/09/30/unauthenticated-command-injection-on-internet-facing-mail-servers-tracking-cve-2026-73570/"
+    },
+    "奇客Solidot–传递最新科技情报": {
+        "PS5 越狱取得突破": "https://www.solidot.org/story?sid=85520",
+        "CNNIC 称中国生成式 AI 用户超 7 亿": "https://www.solidot.org/story?sid=85519",
+        "新奥声称实现氢硼聚变反应突破": "https://www.solidot.org/story?sid=85518",
+        "美国佛蒙特州通过家庭电池储能网络应对气候变化": "https://www.solidot.org/story?sid=85517",
+        "500 光年外的一颗巨行星探测到水、甲烷和氨": "https://www.solidot.org/story?sid=85516",
+        "Windows 11 原生支持 Linux 容器": "https://www.solidot.org/story?sid=85515",
+        "日本人身高增长停滞": "https://www.solidot.org/story?sid=85514",
+        "日本老龄化达到 29.4%， 一人家庭比例首次超过 4 成": "https://www.solidot.org/story?sid=85513",
+        "夜空每年增亮 10%": "https://www.solidot.org/story?sid=85512",
+        "FBI 与荷兰合作逮捕 ShinyHunters 组织领导成员": "https://www.solidot.org/story?sid=85511",
+        "AMD CEO 苏姿丰成为清华经管学院顾问委员会委员": "https://www.solidot.org/story?sid=85510",
+        "加州禁止公职人员发行模因币": "https://www.solidot.org/story?sid=85509"
+    },
+    "360 Netlab Blog - Network Security Research Lab at 360": {
+        "AI安全专题周报（20260930）": "https://blog.netlab.360.com/aian-quan-zhuan-ti-zhou-bao-8/",
+        "金融行业网络安全监测月报(202609)": "https://blog.netlab.360.com/jin-rong-xing-ye-wang-luo-an-quan-jian-ce-yue-bao-202609/"
+    },
+    "HackerNews": {
+        "俄罗斯 Star Blizzard 以虚假活动邀请攻击 100 多个组织，投递后门": "http://0.0.0.0:8080/post/64749",
+        "自动化 AI 智能体被用于入侵网络安全非营利组织 DIVD": "http://0.0.0.0:8080/post/64748",
+        "定制 ChatGPT 推动ClickFix攻击部署 RAT 恶意软件": "http://0.0.0.0:8080/post/64747",
+        "两名前美国空军成员因 BEC 攻击被判入狱": "http://0.0.0.0:8080/post/64746",
+        "新型 Spectre-v2 BTR 攻击绕过现有防御泄露 Linux 内存": "http://0.0.0.0:8080/post/64745",
+        "法国税务数据因员工密码被盗被窃，七周未被发现": "http://0.0.0.0:8080/post/64744"
+    },
+    "张鑫旭-鑫空间-鑫生活": {
+        "一个视频彻底看懂CSS scroll-axis-lock none的作用": "https://www.zhangxinxu.com/wordpress/2026/09/scroll-axis-lock-none/"
+    },
+    "老范讲故事｜AI、大模型与商业世界的故事": {
+        "AMD收购World Labs与李飞飞的去向": "https://lukefan.com/2026/09/30/amd-world-labs-acquisition-fei-fei-li/"
+    },
+    "Innei": {
+        "用 Claude Code、Codex 和 Remotion 做一支《命运石之门》MV": "https://innei.in/posts/tinkering/steins-gate-mv-with-claude-code"
+    },
+    "KAIX.IN": {
+        "改变一切的是时间的缝隙": "https://kaix.in/2026/0930/"
+    },
+    "崎径 其镜": {
+        "AI Agent 小蓝书读书笔记（施工中）": "http://www.z16388.top/ai/agent-bluenote/"
+    },
+    "SEISAMUSE": {
+        "我好像很喜欢植物": "https://www.seis-jun.xyz/blog/2026-09-30-I-like-plants.html"
+    },
+    "伪斜杠青年": {
+        "王国之泪 公主之花 MOD 本质是什么，如何自行实现": "https://i.lckiss.com/?p=9851"
+    },
+    "木匣子": {
+        "木匣子 2026 on Astro": "https://blog.mutoo.im/2026/09/mbox-2026-on-astro/"
+    },
+    "Mayx的博客": {
+        "如何制作一个“完整”的博客压缩包？": "https://mabbs.github.io/2026/10/01/quine.html"
+    },
+    "CHEGVA": {
+        "又是一年翻缸时": "https://chegva.com/6819.html"
+    },
+    "渚碧": {
+        "免费音乐的破解之道": "https://jubeny.com/2026/09/unlock-free-music/"
+    },
+    "": {
+        "用 MX Linux 制作可保存数据的外置 U 盘系统": "https://blog.fivest.one/archives/7231"
+    },
+    "游研社": {
+        "「3i计划」秋季阅兵阵容曝光！发布会直播预约已开启！": "https://www.yystv.cn/p/14467",
+        "在《空战奇兵8》中，假王牌如何打赢一场“真”战争？": "https://www.yystv.cn/p/14465"
+    },
+    "LiesAuer's Blog": {
+        "解决 Codex 无法访问 rg.exe 的问题": "https://www.liesauer.net/blog/post/1046.html"
+    },
+    "Lei Mao's Log Book": {
+        "蜂蜜的针": "https://leimao.github.io/essay/%E8%9C%82%E8%9C%9C%E7%9A%84%E9%92%88-No-Other-Love-2026/"
+    },
+    "让小产品的独立变现更简单 - ezindie.com": {
+        "独立开发变现周刊（第159期） : 300万美元年收入面试神器": "https://www.ezindie.com/weekly/issue-159"
+    },
+    "EdNovas的小站": {
+        "Mondoze VPS": "https://ednovas.xyz/2026/09/30/mondoze/"
+    },
+    "Java for You": {
+        "WSL Containers GA：本地AI容器的生命周期、网络与治理验收": "https://java4u.cn/ai/2892.html",
+        "Kumo Tabular工程评估：零训练预测、校准与分布漂移": "https://java4u.cn/ai/2889.html",
+        "GPT-6.1 Sol迁移指南：从token单价转向每任务成本门禁": "https://java4u.cn/ai/2886.html",
+        "MongoDB Atlas Agent Engine之后，如何用版本门禁防止陈旧写入": "https://java4u.cn/ai/2883.html",
+        "从ProvenanceGuard理解多源RAG的claim-to-source验证": "https://java4u.cn/ai/2880.html"
+    },
+    "home - SHRIK3 on SHRIK3": {
+        "Hmmm I read something at some point ... let me grab the link..": "https://shrik3.com/volatile/paste/"
+    }
+}
